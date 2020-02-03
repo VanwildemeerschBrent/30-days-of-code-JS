@@ -11,9 +11,11 @@
 
     const secondDegrees = (seconds / 60) * 360;
     const minuteDegrees = (minutes / 60) * 360;
-    const hourDegrees = (hour / 60) * 360;
+    const hourDegrees = (hour / 12) * 360;
 
-    secondHand.style.transform = `rotate(${secondDegrees}deg)`;
+    secondHand.style.transform = `rotate(${secondDegrees + 90}deg)`;
+    minHand.style.transform = `rotate(${minuteDegrees + 90}deg)`;
+    hourHand.style.transform = `rotate(${hourDegrees + 90}deg)`;
   }
 
   setInterval(setDate, 1000);
